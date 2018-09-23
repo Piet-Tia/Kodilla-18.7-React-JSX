@@ -1,5 +1,5 @@
 const createSingleContact = function (contact) {
-	return React.createElement(Contact, { item: contact, key: contact.id });
+	return <Contact item= {contact} key= {contact.id} />
 }
 
 const Contacts = React.createClass({
@@ -11,7 +11,9 @@ const Contacts = React.createClass({
 		const contacts = this.props.items.map(createSingleContact);
 
 		return (
-			React.createElement('ul', { className: 'contactsList' }, contacts)
+			<ul className= {'contactsList'}> 
+				{contacts}
+			</ul>
 		);
 	}
 });
